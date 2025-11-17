@@ -1,5 +1,7 @@
 *.asv
 Modules/
 
+TEST*.m
+
 *.txt
 !Modules_url_list.txt

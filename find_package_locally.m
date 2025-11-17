@@ -1,4 +1,7 @@
 function [Status, Name, Dependencies, Info] = find_package_locally(package_name)
+    Name = string.empty;
+    Dependencies = string.empty;
+    Info = string.empty;
 
     Fern_modeule_info_filename = '.fern_module';
 
@@ -7,7 +10,7 @@ function [Status, Name, Dependencies, Info] = find_package_locally(package_name)
     
     if ~isfolder(Path)
         Status = false;
-        return;
+        return; % FIXME: early return
     end
 
     [contain_module_file, Path_to_fern_info] = ...
@@ -18,12 +21,8 @@ function [Status, Name, Dependencies, Info] = find_package_locally(package_name)
         [Name, Dependencies, Info] = parse_fern_info(Path_to_fern_info);
         if Name ~= string(package_name)
             Status = false;
-            return; % FIXME: bad code
+            return; % FIXME: early return
         end
-    else
-        Name = string.empty;
-        Dependencies = string.empty;
-        Info = string.empty;
     end
 
     Status = true;

@@ -26,14 +26,3 @@ end
         path_to_name = string.empty;
     end
 end
-
-
-
-
-% TODO: make external function
-function string = erase_last_slash(string)
-    string = char(string);
-    if string(end) == "/" | string(end) == "\"
-        string(end) = [];
-    end
-end
