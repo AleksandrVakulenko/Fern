@@ -1,9 +1,4 @@
 function [Status, Name, Dependencies, Info] = find_package_locally(package_name)
-    Name = string.empty; % FIXME: same code as in @parse_fern_info
-    Dependencies = string.empty;
-    Info = string.empty;
-    
-% package_name = 'nyan';
 
     Fern_modeule_info_filename = '.fern_module';
 
@@ -15,27 +10,24 @@ function [Status, Name, Dependencies, Info] = find_package_locally(package_name)
         return;
     end
 
-    names = dir(Path);
-    b = struct2cell(names);
-    is_fern_module = any(ismember(b(1,:), Fern_modeule_info_filename));
+    [contain_module_file, Path_to_fern_info] = ...
+        find_file_in_dir(Path, Fern_modeule_info_filename);
 
-    if ~is_fern_module
+    if contain_module_file
 %         rmdir(Path, 's'); % FIXME: add protection
-        Status = false;
-        return;
-    end
-    
-    Path_to_fern_info = [Path '\' Fern_modeule_info_filename];
-    [Name, Dependencies, Info] = parse_fern_info(Path_to_fern_info);
-
-    if Name ~= string(package_name)
-        Status = false;
+        [Name, Dependencies, Info] = parse_fern_info(Path_to_fern_info);
+        if Name ~= string(package_name)
+            Status = false;
+            return; % FIXME: bad code
+        end
+    else
+        Name = string.empty;
+        Dependencies = string.empty;
+        Info = string.empty;
     end
 
     Status = true;
 end
-
-
 
 
 

@@ -1,10 +1,5 @@
 function status = update_package_from_github(package_name)
 
-% package_name = "aDevice";
-
-
-% status = false;
-
 Modules_path = get_fern_modules_folder();
 Path = [Modules_path char(package_name)];
 

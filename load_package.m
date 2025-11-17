@@ -6,6 +6,9 @@
 % 5) check what is included now
 % 6) add exclude function
 % 7) do not update if loaded from git
+%
+% 8) delete name from .fern_module
+% 9) add more packages
 
 
 function load_package(package_name, update)
