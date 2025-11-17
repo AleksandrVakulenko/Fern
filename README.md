@@ -1,6 +1,6 @@
 # Fern
-![image](img.png) Matlab R2021 package manager
-
+Matlab R2021 package manager
+![image](img.png)
 
 ## Installation
 1) Place this repo to any folder:
