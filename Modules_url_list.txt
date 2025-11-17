@@ -1,0 +1,6 @@
+Connector
+https://github.com/AleksandrVakulenko/Device_connector_class.git
+
+aDevice
+https://github.com/AleksandrVakulenko/Automation_device_class.git
+
