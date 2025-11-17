@@ -1,22 +1,27 @@
 % TODO:
 % 1) multiple include problem (+V0.1)
-% 2) do not update if loaded from git (+V0.1)
-% 3) add exclude function (+V0.1)
-% 4) add internet connection check OR catch errors
+% 2) add exclude function (+V0.1)
+% 3) add internet connection check OR catch errors
+% 4) add .fern_dependencies file (and Fern.auto)
 % 5) update URL list parser (+V0.0.5)
 % 6) update .fern_module parser (+V0.0.5)
-% 7) 
 %
 % COMMON:
 % 1) delete name from .fern_module
-% 2) add more packages
-% 3) create new git API
-% 4) new logo
+% 2) create new git API
+% 3) new logo
 %
+% Add new packeges
+% 1) https://github.com/AleksandrVakulenko/Novocontrol-file-import.git
+% 2) 
+% 
 % DONE:
 % 1) check what is included now
 % 2) 
 
+
+
+% FIXME: need refactor !!!!
 
 function load_package(package_name, update)
     arguments
@@ -25,17 +30,27 @@ function load_package(package_name, update)
     end
     % TODO: update modules list in arguments
     
-    [status, Name, Dependencies, Info] = find_package_locally(package_name);
+    [found_localy, Name, Dependencies, Info] = find_package_locally(package_name);
     
-    if status == false
-        status = get_package_from_github(package_name);
+    if found_localy == false
+        downloaded = get_package_from_github(package_name);
+        if ~downloaded
+            error(['Error while downloading: ' char(package_name)])
+        end
+        % FIXME: do we need to get status twice?
         [status, Name, Dependencies, Info] = find_package_locally(package_name);
     else
+        status = true;
+        if update
+            update_package_from_github(package_name);
+            [found_localy, Name, Dependencies, Info] = ...
+                find_package_locally(package_name);
+        end
         disp(['Fern: package <' char(package_name) '> was found locally'])
     end
     
     if status
-        activate_package(package_name, update);
+        activate_package(package_name);
         
         for i = 1:numel(Dependencies)
             load_package(Dependencies(i), update);
@@ -49,11 +64,7 @@ end
 
 
 
-function activate_package(package_name, update)
-    if update
-        update_package_from_github(package_name);
-    end
-    
+function activate_package(package_name)
     if ~is_included(package_name)
         include_in_path(package_name);
         disp(['Fern: package <' char(package_name) '> is included' newline])
