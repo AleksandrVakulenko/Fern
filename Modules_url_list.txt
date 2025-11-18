@@ -7,3 +7,5 @@ https://github.com/AleksandrVakulenko/Automation_device_class.git
 Debug_msg
 https://github.com/AleksandrVakulenko/Debug_msg_for_matlab.git
 
+Plot_lib
+https://github.com/AleksandrVakulenko/Matlab_plot_library.git
