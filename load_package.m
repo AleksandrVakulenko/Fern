@@ -5,6 +5,9 @@
 % 4) add .fern_dependencies file (and Fern.auto)
 % 5) update URL list parser (+V0.0.5)
 % 6) update .fern_module parser (+V0.0.5)
+% 7) add Fern.open_folder_of_module (+V0.0.5)
+% 8) add Fern.updateall (+V0.1.0)
+% 9) add second try if downloading problems (+V0.0.5)
 %
 % COMMON:
 % 1) delete name from .fern_module
@@ -20,6 +23,7 @@
 % 2) 
 
 
+% FIXME: ISSUE: if case of empty folder it clould be included
 
 % FIXME: need refactor !!!!
 
@@ -39,6 +43,10 @@ function load_package(package_name, update)
         end
         % FIXME: do we need to get status twice?
         [status, Name, Dependencies, Info] = find_package_locally(package_name);
+        if ~status
+            error(['Could not find (after downloading) Fern module: '...
+                char(package_name)]);
+        end
     else
         status = true;
         if update
@@ -56,7 +64,9 @@ function load_package(package_name, update)
             load_package(Dependencies(i), update);
         end
     else
-        error(['Could not find Fern module: ' char(package_name)]);
+        
+        
+        
     end
 
 end

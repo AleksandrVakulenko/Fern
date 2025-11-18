@@ -1,8 +1,18 @@
-function status = gitclone_old_version(URL, Path)
+function status = gitclone_old_version(URL, Path, echo)
+arguments
+    URL string
+    Path string
+    echo logical = false
+end
 
 CMD_str = ['cd ' char(Path) ' & git clone ' char(URL) ' .'];
-% [status, ~] = system(CMD_str, "-echo");
-[status, ~] = system(CMD_str);
+
+if echo
+    disp(['CMD: ' newline char(CMD_str) newline])
+    [status, ~] = system(CMD_str, "-echo");
+else
+    [status, ~] = system(CMD_str);
+end
 
 status = status == 0;
 
