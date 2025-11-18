@@ -5,7 +5,8 @@ arguments
     echo logical = false
 end
 
-CMD_str = ['cd ' char(Path) ' & git clone ' char(URL) ' .'];
+% CMD_str = ['cd ' char(Path) ' & git clone ' char(URL) ' .'];
+CMD_str = ['(cd /d "' char(Path) '") & (git clone ' char(URL) ' .)'];
 
 if echo
     disp(['CMD: ' newline char(CMD_str) newline])
