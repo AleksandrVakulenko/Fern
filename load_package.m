@@ -22,6 +22,13 @@
 % 1) check what is included now
 % 2) 
 
+% TODO 2025/12/01:
+% 1) Exclude unused pathes (in case of Matlab crash it stays forever)
+% 2) Check if git does not work
+% 3) Create a function index (and find function)
+% 4) Create file for dependencies to load
+% 
+
 
 % FIXME: ISSUE: if case of empty folder it clould be included
 
