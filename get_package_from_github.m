@@ -14,7 +14,7 @@ URL = find_module_url(package_name);
 mkdir(Path);
 
 disp(['Clone Git repo: ' char(URL)])
-status = gitclone_old_version(URL, Path);
+status = fgit_tools.clone(URL, Path);
 
 
 end

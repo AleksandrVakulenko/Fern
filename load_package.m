@@ -8,31 +8,29 @@
 % 7) add Fern.open_folder_of_module (+V0.0.5)
 % 8) add Fern.updateall (+V0.1.0)
 % 9) add second try if downloading problems (+V0.0.5)
-%
-% COMMON:
-% 1) delete name from .fern_module
-% 2) create new git API
-% 3) new logo
-%
-% Add new packeges
-% 1) https://github.com/AleksandrVakulenko/Novocontrol-file-import.git
-% 2) 
-% 
-% DONE:
-% 1) check what is included now
-% 2) 
 
 % TODO 2025/12/01:
 % 1) Exclude unused pathes (in case of Matlab crash it stays forever)
 % 2) Check if git does not work
 % 3) Create a function index (and find function)
 % 4) Create file for dependencies to load
-% 
+% 5) Overall refactor
 
+% COMMON:
+% 1) delete name from .fern_module
+% 2) new logo
+% 3) 
+
+% Add new packeges
+% 1) https://github.com/AleksandrVakulenko/Novocontrol-file-import.git
+% 2) 
+
+% DONE:
+% 1) check what is included now
+% 2) create new git API
 
 % FIXME: ISSUE: if case of empty folder it clould be included
 
-% FIXME: need refactor !!!!
 
 function load_package(package_name, update)
     arguments
