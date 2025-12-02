@@ -11,7 +11,7 @@ end
 
 cd_cmd = ['cd /d "' char(Path) '"'];
 git_cmd = ['git clone ' char(URL) ' .'];
-CMD_str = ['(' cd_cmd ') && (' git_cmd ')']
+CMD_str = ['(' cd_cmd ') && (' git_cmd ')'];
 
 if echo
     disp(['CMD: ' newline char(CMD_str) newline])
