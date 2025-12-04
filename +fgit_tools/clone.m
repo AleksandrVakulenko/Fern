@@ -9,9 +9,18 @@ arguments
     echo logical = false
 end
 
-cd_cmd = ['cd /d "' char(Path) '"'];
+if isunix
+    cd_cmd = ['cd "' char(Path) '"'];
+else
+    cd_cmd = ['cd /d "' char(Path) '"'];
+end
 git_cmd = ['git clone ' char(URL) ' .'];
-CMD_str = ['(' cd_cmd ') && (' git_cmd ')'];
+
+if isunix
+    CMD_str = [cd_cmd ' && ' git_cmd];
+else
+    CMD_str = ['(' cd_cmd ') && (' git_cmd ')'];
+end
 
 if echo
     disp(['CMD: ' newline char(CMD_str) newline])

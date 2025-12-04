@@ -9,9 +9,18 @@ Branch string = "master"
 Remote string = "origin"
 end
 
-cd_cmd = ['cd /d "' char(Path) '"'];
+if isunix
+    cd_cmd = ['cd "' char(Path) '"'];
+else
+    cd_cmd = ['cd /d "' char(Path) '"'];
+end
 git_cmd = ['git pull ' char(Remote) ' ' char(Branch)];
-CMD_str = ['(' cd_cmd ') && (' git_cmd ')'];
+
+if isunix
+    CMD_str = [cd_cmd ' && ' git_cmd];
+else
+    CMD_str = ['(' cd_cmd ') && (' git_cmd ')'];
+end
 
 % [status, ~] = system(CMD_str, "-echo");
 [cmd_status, resp] = system(CMD_str);
