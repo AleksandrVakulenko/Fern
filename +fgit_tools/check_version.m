@@ -1,6 +1,5 @@
 % git pull function
 % for Matlab versions less than R2023b
-% uses windows cmd.exe
 
 function version = check_version()
 

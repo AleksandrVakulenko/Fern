@@ -1,6 +1,5 @@
 % git clone function
 % for Matlab versions less than R2023b
-% uses windows cmd.exe
 
 function status = clone(URL, Path, echo)
 arguments
