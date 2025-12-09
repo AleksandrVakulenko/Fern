@@ -5,9 +5,6 @@ function Modules_path = get_fern_modules_folder()
         mkdir([char(Fern_path) 'Modules']);
     end
 
-    if isunix
-        Modules_path = [char(Fern_path) 'Modules/'];
-    else
-        Modules_path = [char(Fern_path) 'Modules\'];
-    end
+    Modules_path = [char(Fern_path) 'Modules/'];
+    Modules_path = fullfile(Modules_path);
 end

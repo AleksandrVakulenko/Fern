@@ -16,11 +16,12 @@ else
 end
 git_cmd = ['git clone ' char(URL) ' .'];
 
-if isunix
-    CMD_str = [cd_cmd ' && ' git_cmd];
-else
-    CMD_str = ['(' cd_cmd ') && (' git_cmd ')'];
-end
+% if isunix
+%     CMD_str = [cd_cmd ' && ' git_cmd];
+% else
+%     CMD_str = ['(' cd_cmd ') && (' git_cmd ')'];
+% end
+CMD_str = [cd_cmd ' && ' git_cmd];
 
 if echo
     disp(['CMD: ' newline char(CMD_str) newline])

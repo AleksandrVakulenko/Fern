@@ -16,11 +16,12 @@ else
 end
 git_cmd = ['git pull ' char(Remote) ' ' char(Branch)];
 
-if isunix
-    CMD_str = [cd_cmd ' && ' git_cmd];
-else
-    CMD_str = ['(' cd_cmd ') && (' git_cmd ')'];
-end
+% if isunix
+%     CMD_str = [cd_cmd ' && ' git_cmd];
+% else
+%     CMD_str = ['(' cd_cmd ') && (' git_cmd ')'];
+% end
+CMD_str = [cd_cmd ' && ' git_cmd];
 
 % [status, ~] = system(CMD_str, "-echo");
 [cmd_status, resp] = system(CMD_str);
