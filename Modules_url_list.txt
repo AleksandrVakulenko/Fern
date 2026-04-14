@@ -15,3 +15,6 @@ https://github.com/AleksandrVakulenko/FRA_tools.git
 
 Common
 https://github.com/AleksandrVakulenko/Matlab_common_functions.git
+
+Dahlia
+https://github.com/AleksandrVakulenko/Dahlia_FE_analizer
