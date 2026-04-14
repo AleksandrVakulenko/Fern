@@ -1,7 +1,9 @@
 # Fern V1.1.13
 Matlab R2021 package manager
 
-![image](img.png)
+<p align="center">
+  <img src="logo/logo.png" width="270" alt="Fern logo" />
+</p>
 
 ## Installation
 1) You must have Git installed on your system.
