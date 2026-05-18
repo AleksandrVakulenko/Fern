@@ -18,7 +18,7 @@ git_cmd = ['git branch'];
 
 CMD_str = cmd.concat(cd_cmd, git_cmd);
 
-cmd.exec(CMD_str, echo);
+resp = cmd.exec(CMD_str, echo);
 
 [Branches, Current_branch] = branch_parse(resp);
 
