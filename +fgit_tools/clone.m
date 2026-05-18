@@ -8,26 +8,13 @@ arguments
     echo logical = false
 end
 
-if isunix
-    cd_cmd = ['cd "' char(Path) '"'];
-else
-    cd_cmd = ['cd /d "' char(Path) '"'];
-end
+cd_cmd = cmd.cd(Path);
+
 git_cmd = ['git clone ' char(URL) ' .'];
 
-% if isunix
-%     CMD_str = [cd_cmd ' && ' git_cmd];
-% else
-%     CMD_str = ['(' cd_cmd ') && (' git_cmd ')'];
-% end
-CMD_str = [cd_cmd ' && ' git_cmd];
+CMD_str = cmd.concat(cd_cmd, git_cmd);
 
-if echo
-    disp(['CMD: ' newline char(CMD_str) newline])
-    [cmd_status, resp] = system(CMD_str, "-echo");
-else
-    [cmd_status, resp] = system(CMD_str);
-end
+[cmd_status, resp] = cmd.exec(CMD_str, echo);
 
 if cmd_status ~= 0
     warning('Git clone fails:')
@@ -36,7 +23,6 @@ if cmd_status ~= 0
 else
     status = true;
 end
-
 
 end
 

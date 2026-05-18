@@ -1,29 +1,21 @@
 % git pull function
 % for Matlab versions less than R2023b
 
-function status = pull(Path, Branch, Remote)
+function status = pull(Path, Branch, Remote, echo)
 arguments
-Path string
-Branch string = "master"
-Remote string = "origin"
+    Path string
+    Branch string = "master"
+    Remote string = "origin"
+    echo logical = false
 end
 
-if isunix
-    cd_cmd = ['cd "' char(Path) '"'];
-else
-    cd_cmd = ['cd /d "' char(Path) '"'];
-end
+cd_cmd = cmd.cd(Path);
+
 git_cmd = ['git pull ' char(Remote) ' ' char(Branch)];
 
-% if isunix
-%     CMD_str = [cd_cmd ' && ' git_cmd];
-% else
-%     CMD_str = ['(' cd_cmd ') && (' git_cmd ')'];
-% end
-CMD_str = [cd_cmd ' && ' git_cmd];
+CMD_str = cmd.concat(cd_cmd, git_cmd);
 
-% [status, ~] = system(CMD_str, "-echo");
-[cmd_status, resp] = system(CMD_str);
+[cmd_status, resp] = cmd.exec(CMD_str, echo);
 
 if cmd_status ~= 0
     warning('Git pull fails:')
