@@ -1,6 +1,14 @@
+% 2026/05/18
+% Aleksandr Vakulenko
+%
+% Tokenize git text response
+%
 
-
-function List = parse_list(cmd_resp)
+function List = parse_list(cmd_resp, do_not_trim)
+arguments
+cmd_resp string
+do_not_trim logical = false
+end
 
 if isempty(char(cmd_resp))
     List = '';
@@ -16,7 +24,11 @@ else
         Tok = Tokens{i};
         if ~isempty(Tok)
             k = k + 1;
-            List(k) = strtrim(string(Tok));
+            if do_not_trim
+                List(k) = string(Tok);
+            else
+                List(k) = strtrim(string(Tok));
+            end
         end
     end
     List = List';

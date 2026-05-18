@@ -38,6 +38,7 @@
 % 4) add Fern.open_folder_of_module
 % 5) internet connection check function
 % 6) update URL list parser
+% 7) new git functions
 
 
 function load_package(package_name, update)

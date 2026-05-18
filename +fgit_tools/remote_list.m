@@ -2,11 +2,11 @@
 % Aleksandr Vakulenko
 %
 % git function for Matlab versions less than R2023b:
-%  - git status 
-% Returns list of new, renamed, deleted, modified files
+%  - git remote
+% Returns list of added remote names
 %
 
-function [status, modified_files] = status(Path, echo)
+function [status, Remotes] = remote_list(Path, echo)
 arguments
     Path string
     echo logical = false
@@ -14,20 +14,18 @@ end
 
 cd_cmd = cmd.cd(Path);
 
-git_cmd = ['git ls-files --others --modified --exclude-standard'];
-
+git_cmd = ['git remote'];
 CMD_str = cmd.concat(cd_cmd, git_cmd);
-
 [cmd_status, resp] = cmd.exec(CMD_str);
 
 if cmd_status ~= 0
     warning('Git clone fails:')
     disp(resp);
     status = false;
-    modified_files = '';
+    Remotes = '';
 else
     status = true;
-    modified_files = fgit_tools.parse_list(resp);
+    Remotes = fgit_tools.parse_list(resp);
 end
 
 end

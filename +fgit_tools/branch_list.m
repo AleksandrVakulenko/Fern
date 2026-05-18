@@ -1,7 +1,12 @@
-% git clone function
-% for Matlab versions less than R2023b
+% 2026/05/18
+% Aleksandr Vakulenko
+%
+% git function for Matlab versions less than R2023b:
+%  - git branch
+% Reterns list of branches and name of active branch
+%
 
-function [status, Branches, Current_branch] = branch(Path, echo)
+function [status, Branches, Current_branch] = branch_list(Path, echo)
 arguments
     Path string
     echo logical = false

@@ -2,27 +2,26 @@
 % Aleksandr Vakulenko
 %
 % git function for Matlab versions less than R2023b:
-%  - git clone <URL> .
-% Creates local repo and clones remote repo from <URL> to Path
+%  - git init
+% init new local repo in Path
 %
 
-function status = clone(URL, Path, echo)
+% FIXME: need test
+
+function status = init(Path, echo)
 arguments
-    URL string
     Path string
     echo logical = false
 end
 
 cd_cmd = cmd.cd(Path);
-
-git_cmd = ['git clone ' char(URL) ' .'];
-
+git_cmd = 'git init';
 CMD_str = cmd.concat(cd_cmd, git_cmd);
 
 [cmd_status, resp] = cmd.exec(CMD_str, echo);
 
 if cmd_status ~= 0
-    warning('Git clone fails:')
+    warning('Git pull fails:')
     disp(resp);
     status = false;
 else
@@ -30,4 +29,9 @@ else
 end
 
 end
+
+
+
+
+
 

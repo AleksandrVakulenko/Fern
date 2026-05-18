@@ -1,3 +1,11 @@
+% 2026/05/18
+% Aleksandr Vakulenko
+%
+% git function for Matlab versions less than R2023b:
+%  - git checkout <Branch>
+% Performs checkout to <Branch>
+%
+
 function status = checkout(Path, Branch, echo)
 arguments
     Path string

@@ -1,5 +1,11 @@
-% git pull function
-% for Matlab versions less than R2023b
+% 2026/05/18
+% Aleksandr Vakulenko
+%
+% git function for Matlab versions less than R2023b:
+%  - git --version
+% Reterns version of currenly installed git
+%
+
 
 function version = check_version(options)
 arguments

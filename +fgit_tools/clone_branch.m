@@ -2,20 +2,23 @@
 % Aleksandr Vakulenko
 %
 % git function for Matlab versions less than R2023b:
-%  - git clone <URL> .
-% Creates local repo and clones remote repo from <URL> to Path
+%  - git git clone -b <Branch> <URL>
+% Creates local repo and clones <Branch> from <URL>
 %
 
-function status = clone(URL, Path, echo)
+% FIXME: need test
+
+function status = clone_branch(URL, Path, Branch, echo)
 arguments
     URL string
     Path string
+    Branch string
     echo logical = false
 end
 
 cd_cmd = cmd.cd(Path);
 
-git_cmd = ['git clone ' char(URL) ' .'];
+git_cmd = ['git clone -b' char(Branch) char(URL) ' .'];
 
 CMD_str = cmd.concat(cd_cmd, git_cmd);
 
@@ -30,4 +33,13 @@ else
 end
 
 end
+
+
+% git clone -b dev https://github.com/AleksandrVakulenko/LCR_setup.git .
+
+
+
+
+
+
 
