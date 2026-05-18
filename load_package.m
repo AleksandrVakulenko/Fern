@@ -5,9 +5,9 @@
 % 4) Check if git does not work (+0.0.5)
 % 5) 
 % 6) add .fern_dependencies file (and Fern.auto) (+0.2)
-% 7) add Fern.updateall (+0.1.0)
+% 7) finish Fern.update (+0.0.5)
 % 8) 
-% 9) update .fern_module parser (+0.1.0)
+% 9) update .fern_module parser to JSON (+0.1.0)
 
 % TODO 2025/12/01:
 % 1) Exclude unused pathes (in case of Matlab crash it stays forever)
@@ -19,17 +19,12 @@
 % TODO 2026/05/18:
 % 1) convert jsondecode output to string and array from char and cell
 % 2) use more than one URL in get_package_from_github
-% 3) add ability to use differet branches
+% 3) add ability to use differet branches (save in <Name>_<Branch> folder)
 % 4) 
-
-% COMMON:
-% 1) delete name from .fern_module (or not 2025.12.09)
-% 2) new logo
-% 3) 
 
 % Add new packeges
 % 1) https://github.com/AleksandrVakulenko/Novocontrol-file-import.git
-% 2) 
+% 2) from _INBOX folder
 
 % DONE:
 % 1) check what is included now
@@ -37,8 +32,9 @@
 % 3) add exclude function
 % 4) add Fern.open_folder_of_module
 % 5) internet connection check function
-% 6) update URL list parser
-% 7) new git functions
+% 6) new logo
+% 7) update URL list parser
+% 8) new git functions
 
 
 function load_package(package_name, update)

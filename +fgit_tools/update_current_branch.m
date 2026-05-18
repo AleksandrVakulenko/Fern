@@ -43,6 +43,8 @@ if ~flag
     rethrow(Last_err);
 end
 
+disp('    Successfully updated.')
+
 end
 
 
