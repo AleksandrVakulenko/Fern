@@ -6,7 +6,7 @@
 % 5) 
 % 6) add .fern_dependencies file (and Fern.auto) (+0.2)
 % 7) add Fern.updateall (+0.1.0)
-% 8) update URL list parser (+0.1.0)
+% 8) 
 % 9) update .fern_module parser (+0.1.0)
 
 % TODO 2025/12/01:
@@ -15,6 +15,11 @@
 % 3) Create file for dependencies to load
 % 4) Overall refactor (+0.2.0)
 % 5) 
+
+% TODO 2026/05/18:
+% 1) convert jsondecode output to string and array from char and cell
+% 2) use more than one URL in get_package_from_github
+% 3) 
 
 % COMMON:
 % 1) delete name from .fern_module (or not 2025.12.09)
@@ -31,6 +36,7 @@
 % 3) add exclude function
 % 4) add Fern.open_folder_of_module
 % 5) internet connection check function
+% 6) update URL list parser
 
 
 function load_package(package_name, update)

@@ -1,20 +1,33 @@
-Connector
-https://github.com/AleksandrVakulenko/Device_connector_class.git
-
-aDevice
-https://github.com/AleksandrVakulenko/Automation_device_class.git
-
-Debug_msg
-https://github.com/AleksandrVakulenko/Debug_msg_for_matlab.git
-
-Plotlib
-https://github.com/AleksandrVakulenko/Matlab_plot_library.git
-
-FRA_tools
-https://github.com/AleksandrVakulenko/FRA_tools.git
-
-Common
-https://github.com/AleksandrVakulenko/Matlab_common_functions.git
-
-Dahlia
-https://github.com/AleksandrVakulenko/Dahlia_FE_analizer
+[
+  {
+    "Name": "Connector",
+    "URL": "https://github.com/AleksandrVakulenko/Device_connector_class.git"
+  },
+  {
+    "Name": "aDevice",
+    "URL": "https://github.com/AleksandrVakulenko/Automation_device_class.git"
+  },
+  {
+    "Name": "Debug_msg",
+    "URL": [
+      "https://github.com/AleksandrVakulenko/Debug_msg_for_matlab.git",
+      "https://gitverse.ru/AleksandrVakulenko/Debug_msg_for_matlab.git"
+    ]
+  },
+  {
+    "Name": "Plotlib",
+    "URL": "https://github.com/AleksandrVakulenko/Matlab_plot_library.git"
+  },
+  {
+    "Name": "FRA_tools",
+    "URL": "https://github.com/AleksandrVakulenko/FRA_tools.git"
+  },
+  {
+    "Name": "Common",
+    "URL": "https://github.com/AleksandrVakulenko/Matlab_common_functions.git"
+  },
+  {
+    "Name": "Dahlia",
+    "URL": "https://github.com/AleksandrVakulenko/Dahlia_FE_analizer.git"
+  }
+]
