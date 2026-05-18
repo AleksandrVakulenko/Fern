@@ -6,7 +6,7 @@
 % Pulls from <Branch> of <Remote_name>
 %
 
-function status = pull(Path, Branch, Remote_name, echo)
+function pull(Path, Branch, Remote_name, echo)
 arguments
     Path string
     Branch string = "master"
@@ -20,14 +20,6 @@ git_cmd = ['git pull ' char(Remote_name) ' ' char(Branch)];
 
 CMD_str = cmd.concat(cd_cmd, git_cmd);
 
-[cmd_status, resp] = cmd.exec(CMD_str, echo);
-
-if cmd_status ~= 0
-    warning('Git pull fails:')
-    disp(resp);
-    status = false;
-else
-    status = true;
-end
+cmd.exec(CMD_str, echo);
 
 end

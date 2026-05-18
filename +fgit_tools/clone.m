@@ -6,7 +6,7 @@
 % Creates local repo and clones remote repo from <URL> to Path
 %
 
-function status = clone(URL, Path, echo)
+function clone(URL, Path, echo)
 arguments
     URL string
     Path string
@@ -19,15 +19,8 @@ git_cmd = ['git clone ' char(URL) ' .'];
 
 CMD_str = cmd.concat(cd_cmd, git_cmd);
 
-[cmd_status, resp] = cmd.exec(CMD_str, echo);
+cmd.exec(CMD_str, echo);
 
-if cmd_status ~= 0
-    warning('Git clone fails:')
-    disp(resp);
-    status = false;
-else
-    status = true;
-end
 
 end
 

@@ -6,7 +6,7 @@
 % Reterns list of branches and name of active branch
 %
 
-function [status, Branches, Current_branch] = branch_list(Path, echo)
+function [Branches, Current_branch] = branch_list(Path, echo)
 arguments
     Path string
     echo logical = false
@@ -18,19 +18,9 @@ git_cmd = ['git branch'];
 
 CMD_str = cmd.concat(cd_cmd, git_cmd);
 
-[cmd_status, resp] = cmd.exec(CMD_str, echo);
+cmd.exec(CMD_str, echo);
 
-if cmd_status ~= 0
-    warning('Git clone fails:')
-    disp(resp);
-    status = false;
-    Branches = '';
-    Current_branch = '';
-else
-    status = true;
-    [Branches, Current_branch] = branch_parse(resp);
-end
-
+[Branches, Current_branch] = branch_parse(resp);
 
 end
 

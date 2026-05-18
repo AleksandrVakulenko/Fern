@@ -6,7 +6,7 @@
 % Performs checkout to <Branch>
 %
 
-function status = checkout(Path, Branch, echo)
+function checkout(Path, Branch, echo)
 arguments
     Path string
     Branch string
@@ -28,12 +28,7 @@ if string(Active_branch) ~= string(Branch)
     git_cmd = ['git checkout ' char(Branch)];
     CMD_str = cmd.concat(cd_cmd, git_cmd);
 
-    [cmd_status, resp] = cmd.exec(CMD_str, echo);
-
-    if cmd_status ~= 0
-        msg = ['Git checkout fails:' newline resp];
-        error(msg)
-    end
+    cmd.exec(CMD_str, echo);
 end
-status = true; % FIXME: legacy
+
 end

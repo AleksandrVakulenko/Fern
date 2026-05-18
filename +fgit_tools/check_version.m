@@ -12,9 +12,12 @@ arguments
     options.nothrow logical = false
 end
 
-CMD_str = 'git --version';
-
-[status, resp] = system(CMD_str);
+status = 0;
+try
+    resp = cmd.exec('git --version');
+catch
+    status = 1;
+end
 
 if status ~= 0
     if options.nothrow

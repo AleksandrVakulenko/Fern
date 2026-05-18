@@ -4,7 +4,13 @@ Modules_path = get_fern_modules_folder();
 Path = [Modules_path char(package_name)];
 
 disp(['Update from Git repo: ' char(package_name)])
-status = fgit_tools.pull(Path);
+
+try
+    fgit_tools.pull(Path);
+    status = true;
+catch
+    status = false;
+end
 
 
 end

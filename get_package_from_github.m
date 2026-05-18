@@ -22,8 +22,13 @@ end
 
 mkdir(Path);
 
-disp(['Clone Git repo: ' char(URL)])
-status = fgit_tools.clone(URL, Path);
+disp(['Clone Git repo: ' char(URL)]) % FIXME: disp function
+try
+    fgit_tools.clone(URL, Path);
+    status = true;
+catch
+    status = false;
+end
 
 
 end

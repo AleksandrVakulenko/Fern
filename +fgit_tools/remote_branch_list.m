@@ -6,7 +6,7 @@
 % Returns list of branches in remote repo
 %
 
-function [status, Branches, resp] = remote_branch_list(Path, Remote, echo)
+function Branches = remote_branch_list(Path, Remote, echo)
 arguments
     Path string
     Remote string
@@ -17,18 +17,9 @@ cd_cmd = cmd.cd(Path);
 git_cmd = ['git remote show ' char(Remote)];
 CMD_str = cmd.concat(cd_cmd, git_cmd);
 
-[cmd_status, resp] = cmd.exec(CMD_str, echo);
+resp = cmd.exec(CMD_str, echo);
 
-if cmd_status ~= 0
-    warning('Git clone fails:')
-    disp(resp);
-    status = false;
-    Branches = '';
-else
-    status = true;
-    Branches = branch_parse(resp);
-end
-
+Branches = branch_parse(resp);
 
 end
 
