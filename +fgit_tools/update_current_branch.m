@@ -19,7 +19,7 @@ end
 
 [~, Current_branch] = fgit_tools.branch_list(Path);
 
-Remotes_list = fgit_tools.remote_list;
+Remotes_list = fgit_tools.remote_list(Path);
 Errors = [];
 flag = false;
 for i = 1:numel(Remotes_list)
