@@ -33,7 +33,9 @@ i = i + 1;
 Modules_list(i).Name = "Dahlia";
 Modules_list(i).URL = "https://github.com/AleksandrVakulenko/Dahlia_FE_analizer.git";
 
-
+i = i + 1;
+Modules_list(i).Name = "klog";
+Modules_list(i).URL = "https://github.com/AleksandrVakulenko/klog.git";
 
 
 Filename = "Modules_url_list.txt";
