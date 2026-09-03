@@ -29,5 +29,9 @@
   {
     "Name": "Dahlia",
     "URL": "https://github.com/AleksandrVakulenko/Dahlia_FE_analizer.git"
+  },
+  {
+    "Name": "klog",
+    "URL": "https://github.com/AleksandrVakulenko/klog.git"
   }
 ]
