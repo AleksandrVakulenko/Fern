@@ -26,6 +26,9 @@ function open_folder_in_explorer(Path)
     if ispc
         CMD_str = ['explorer.exe "' char(Path) '"'];
         [cmd_status, resp] = system(CMD_str);
+    elseif isunix
+        CMD_str = ['xdg-open ' '"' char(Path) '"'];
+        [cmd_status, resp] = system(CMD_str);
     else
         warning('open_folder function is not supported')
     end
