@@ -37,6 +37,14 @@ i = i + 1;
 Modules_list(i).Name = "klog";
 Modules_list(i).URL = "https://github.com/AleksandrVakulenko/klog.git";
 
+i = i + 1;
+Modules_list(i).Name = "Time_domain_FRA";
+Modules_list(i).URL = "https://github.com/AleksandrVakulenko/Time_domain_FRA.git";
+
+i = i + 1;
+Modules_list(i).Name = "Aster_FRA";
+Modules_list(i).URL = "https://github.com/AleksandrVakulenko/Aster_FRA.git";
+
 
 Filename = "Modules_url_list.txt";
 

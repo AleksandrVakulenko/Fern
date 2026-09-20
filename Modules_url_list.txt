@@ -33,5 +33,13 @@
   {
     "Name": "klog",
     "URL": "https://github.com/AleksandrVakulenko/klog.git"
+  },
+  {
+    "Name": "Time_domain_FRA",
+    "URL": "https://github.com/AleksandrVakulenko/Time_domain_FRA.git"
+  },
+  {
+    "Name": "Aster_FRA",
+    "URL": "https://github.com/AleksandrVakulenko/Aster_FRA.git"
   }
 ]
