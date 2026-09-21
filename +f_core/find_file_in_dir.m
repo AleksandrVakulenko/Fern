@@ -20,7 +20,7 @@ end
     end
 
     if status
-        folder = erase_last_slash(folder);
+        folder = f_core.erase_last_slash(folder);
         path_to_name = [char(folder) '/' char(name)];
     else
         path_to_name = string.empty;

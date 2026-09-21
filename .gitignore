@@ -5,3 +5,6 @@ TEST*.m
 
 *.txt
 !Modules_url_list.txt
+
+_hide/
+

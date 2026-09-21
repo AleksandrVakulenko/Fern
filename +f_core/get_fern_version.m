@@ -1,5 +1,8 @@
 
-function [Version_txt, Version_struct] = get_fern_vrersion()
+
+% FIXME: unused
+
+function [Version_txt, Version_struct] = get_fern_version()
 
 Data = fileread('README.md');
 

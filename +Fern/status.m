@@ -2,7 +2,7 @@
 
 function status()
 
-active_modules = find_active_modules();
+active_modules = f_core.find_active_modules();
 
 if ~isempty(active_modules)
     disp("Active modules:")

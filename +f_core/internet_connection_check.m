@@ -1,3 +1,7 @@
+
+% FIXME: unused
+% FIXME: (2) add different IPs
+
 function [connected] = internet_connection_check()
 
 [~, ~, Lost] = ping(1);

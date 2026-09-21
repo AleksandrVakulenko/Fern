@@ -4,7 +4,7 @@ function remove(module_name)
         module_name string {isStringScalar(module_name)} = "all";
     end
     
-    active_modules = find_active_modules();
+    active_modules = f_core.find_active_modules();
     
     if module_name == "all"
         for i = 1:numel(active_modules)
@@ -19,7 +19,7 @@ end
 
 
 function exclude_single_module(module_name)
-    Modules_path = get_fern_modules_folder();
+    Modules_path = f_core.get_fern_modules_folder();
     Path = [Modules_path char(module_name)];
     Path = fullfile(Path);
     rmpath(Path);

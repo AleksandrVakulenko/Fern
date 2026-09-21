@@ -20,7 +20,7 @@ function [Name, Dependencies, Info] = parse_fern_info(Path_to_fern_info)
         k = 5;
         i = 1;
         while(strlength(Lines(k)) ~= 0)
-            Dependencies(i) = clear_lines(Lines(k));
+            Dependencies(i) = f_core.clear_lines(Lines(k));
             i = i + 1;
             k = k + 1;
         end

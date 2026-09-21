@@ -1,4 +1,5 @@
 
+% FIXME: unused
 
 function [Config_file, Temp_folder] = path_to_config_file()
 

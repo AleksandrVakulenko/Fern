@@ -20,6 +20,10 @@ Filename = "TEST_file_01.txt";
 
 Json_text = jsonencode(Modules_info, "PrettyPrint", true);
 
+disp(Json_text);
+
+%%
+
 fid = fopen(Filename, 'w');
 fprintf(fid, Json_text);
 fclose(fid);

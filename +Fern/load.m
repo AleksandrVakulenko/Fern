@@ -15,6 +15,6 @@ function load(package_name)
             ])}
     end
 
-    load_package(package_name, true);
+    f_core.load_package(package_name, true);
 
 end

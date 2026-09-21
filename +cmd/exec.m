@@ -1,4 +1,6 @@
 
+% NOTE: cmd_status == 0 is OK status
+
 function [resp, cmd_status] = exec(CMD_str, echo)
 arguments
     CMD_str string

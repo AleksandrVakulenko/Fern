@@ -4,10 +4,10 @@ function open_folder(module_name)
         module_name string {isStringScalar(module_name)} = "";
     end
     
-    Modules_path = get_fern_modules_folder();
+    Modules_path = f_core.get_fern_modules_folder();
 
     if module_name ~= ""
-        exist = find_file_in_dir(Modules_path, module_name, "folder");
+        exist = f_core.find_file_in_dir(Modules_path, module_name, "folder");
     
         if exist
             Path = fullfile([Modules_path char(module_name)]);

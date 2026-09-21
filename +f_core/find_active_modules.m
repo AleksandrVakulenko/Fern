@@ -1,8 +1,9 @@
 
+
 function Module_names = find_active_modules()
 
-MF = get_fern_modules_folder();
-Lines = get_full_path_elements();
+MF = f_core.get_fern_modules_folder();
+Lines = f_core.get_full_path_elements();
 
 ind_cell = strfind(Lines, MF);
 
@@ -32,7 +33,7 @@ end
 
 function Folder_name = get_last_folder_in_path(Path)
     
-    Path = erase_last_slash(Path);
+    Path = f_core.erase_last_slash(Path);
 
     % for any type "\" "/"
     ind = strfind(Path, '\');
