@@ -38,11 +38,24 @@ else
     error('Under construction: currently unsupported platform')
 end
 
-Tokens = regexp(C, '= (\d+)', 'tokens');
+% FIXME: bad code
+Lines = fgit_tools.parse_list(C);
+ind_tx = find_str_in_arr(Lines, "transmitted");
+ind_rx = find_str_in_arr(Lines, "received");
+if ind_tx ~= ind_rx
+    error('.'); % FIXME: msg
+end
+Line = Lines(ind_tx)
+
+Tokens = regexp(Line, '= (\d+)', 'tokens');
+
+error('FIXME: unfunished code')
 
 Send = str2double(Tokens{1}{1});
 Rec = str2double(Tokens{2}{1});
-Lost = str2double(Tokens{3}{1});
+% Lost = str2double(Tokens{3}{1});
+Lost = Send - Rec;
+
 
 if Send ~= Rec + Lost
     Str = format_result(Send, Rec, Lost);
@@ -61,5 +74,23 @@ Str = ['  Send: ' num2str(Send) newline ...
 end
 
 
+function ind = find_str_in_arr(arr, str)
+ind = [];
+for i = 1:numel(arr)
+    if contains(arr(i), str)
+        ind = [ind i];
+    end
+end
+
+end
+
+
+
+% NOTE: ping out for linux
+%     "PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data."
+%     "64 bytes from 8.8.8.8: icmp_seq=1 ttl=103 time=133 ms"
+%     "--- 8.8.8.8 ping statistics ---"
+%     "1 packets transmitted, 1 received, 0% packet loss, time 0ms"
+%     "rtt min/avg/max/mdev = 133.181/133.181/133.181/0.000 ms"
 
 
