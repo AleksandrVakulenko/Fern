@@ -29,9 +29,16 @@ function [Branches] = branch_parse(cmd_resp)
 
 Tokens = fgit_tools.parse_list(cmd_resp, true);
 
+ind = [];
 for i = 1:numel(Tokens)
-    ind = strfind(Tokens(i), "Remote branch:");
-    if ~isempty(ind)
+    ind1 = strfind(Tokens(i), "Remote branch:");
+    ind2 = strfind(Tokens(i), "Remote branches:");
+    if ~isempty(ind1) || ~isempty(ind2)
+        if isempty(ind1)
+            ind = ind2;
+        else
+            ind = ind1;
+        end
         break;
     end
 end
