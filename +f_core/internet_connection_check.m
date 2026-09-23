@@ -50,6 +50,14 @@ Line = Lines(ind_tx)
 Tokens = regexp(Line, '= (\d+)', 'tokens');
 
 error('FIXME: unfunished code')
+% NOTE: maybe this
+% regexp("1 packets transmitted, 1 received, 0% packet loss, time 0ms", ...
+%        "(\d+) packets transmitted, (\d+) received", ...
+%        "tokens")
+
+
+
+
 
 Send = str2double(Tokens{1}{1});
 Rec = str2double(Tokens{2}{1});

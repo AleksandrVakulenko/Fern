@@ -1,5 +1,9 @@
 
-function open_folder(module_name)
+
+% NOTE: opens folder in explorer if no output args are presented.
+% NOTE: returnst path to module if single output arg is presented.
+
+function Out_path = open_folder(module_name)
     arguments
         module_name string {isStringScalar(module_name)} = "";
     end
@@ -11,12 +15,24 @@ function open_folder(module_name)
     
         if exist
             Path = fullfile([Modules_path char(module_name)]);
-            open_folder_in_explorer(Path);
+            if nargout == 0
+                open_folder_in_explorer(Path);
+                Out_path = Path;
+            else
+                % NOTE: just return path
+                Out_path = Path;
+            end
         else
             warning(['Folder "' char(module_name) '" does not exist.'])
         end
     else
-        open_folder_in_explorer(Modules_path);
+        if nagrout == 0
+            open_folder_in_explorer(Modules_path);
+            Out_path = Modules_path;
+        else
+            % NOTE: just return path
+            Out_path = Modules_path;
+        end
     end
 
 end
