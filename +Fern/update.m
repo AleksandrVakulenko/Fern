@@ -38,10 +38,11 @@ end
 
 Modules_path = f_core.get_fern_modules_folder();
 
-Folders_list = get_all_folders(Modules_path);
+Folders_list = f_core.get_list_of_folders(Modules_path);
 
 for i = 1:numel(Folders_list)
     Path = [char(Modules_path) filesep char(Folders_list(i))];
+    Path = fullfile(Path); % FIXME: check on linux;
     is_git = fgit_tools.is_git_repo(Path);
     if is_git
         modified_files = fgit_tools.status(Path);
@@ -65,18 +66,7 @@ end
 
 
 
-function Folders_list = get_all_folders(Path)
-    content = dir(Path);
-    content = struct2cell(content);
-    is_dir = content(5, :);
-    all_names = content(1, :);
-    all_names = cellfun(@(x) string(x), all_names);
-    is_dir = cell2mat(is_dir);
-    all_names(~is_dir) = [];
-    all_names(1:2) = [];
 
-    Folders_list = all_names;
-end
 
 
 

@@ -1,5 +1,7 @@
 
 
+% FIXME: maybe delete '/' on the end on Path
+
 function Path = get_fern_local_path()
 Path = which("f_core.get_fern_local_path");
 % ind = strfind(Path, "+f_core/get_fern_local_path.m")

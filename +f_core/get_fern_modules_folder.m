@@ -1,5 +1,7 @@
 
 
+% FIXME: maybe delete '/' on the end on Path
+
 function Modules_path = get_fern_modules_folder()
     Fern_path = f_core.get_fern_local_path();
     exist = f_core.find_file_in_dir(Fern_path, "Modules", "folder");
