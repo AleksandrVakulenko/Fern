@@ -34,29 +34,29 @@ Matlab R2021 package manager
     - Removes selected package from path.
     - "all" removes all included packeges from path.
 
-* Fern.open_folder("package name")
+* `Fern.open_folder("package name")`
 
     - Opens package folder in OS explorer.
     - Opens Module folder if the argument is not specified.
 
-* Path = Fern.open_folder("package name")
+* `Path = Fern.open_folder("package name")`
     
     - If an output argument is specified, the function returns the system path to the folder, and File Explorer does not open.
 
-* Fern.status()
+* `Fern.status()`
 
     - Prints a list of included modules.
 
-* Fern.update(arg)
+* `Fern.update(arg)`
     
     - arg == "self" : updates Fern from origin(remote) master(branch).
     - arg == "all" : updates all available modules.
 
-* Fern.archive("create", Path_to_save_file_name)
+* `Fern.archive("create", Path_to_save_file_name)`
 
     - Creates an archive file with all available modules.
 
-* Fern.archive("restore", Path_to_save_file_name)
+* `Fern.archive("restore", Path_to_save_file_name)`
 
     - Restore modules from archive file.
 
