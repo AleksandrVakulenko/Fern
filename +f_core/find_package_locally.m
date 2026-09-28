@@ -14,7 +14,7 @@ function [Status, Name, Dependencies, Info] = find_package_locally(package_name)
     content = dir(Path);
     content = struct2cell(content);
     content = content(1, :);
-    if numel(content) > 2
+    if numel(content) > 2 % NOTE: it means '.' and '..' (empty folder)
         Status = true;
     else
         Status = false;

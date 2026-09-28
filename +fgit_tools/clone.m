@@ -4,7 +4,7 @@
 % git function for Matlab versions less than R2023b:
 %  - git clone <URL> .
 % Creates local repo and clones remote repo from <URL> to Path
-%
+% URL could be a path to bundle file, created by bundle_create function
 
 function clone(URL, Path, echo)
 arguments
