@@ -1,9 +1,11 @@
 # Fern V1.3.0
 Matlab R2021 package manager
 
-<div style="display: flex; align-items: flex-end; justify-content: center; gap: 16px;">
+<div style="position: relative; text-align: center;">
   <img src="logo/logo.png" width="270" alt="Fern logo" />
-  <em style="font-size: 16px;">Your spells, always within reach.</em>
+  <em style="font-size: 16px; position: absolute; left: 50%; margin-left: 145px; bottom: 0;">
+    Your spells, always within reach.
+  </em>
 </div>
 
 ## Installation
