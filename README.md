@@ -1,4 +1,4 @@
-# Fern V1.2.22
+# Fern V1.3.0
 Matlab R2021 package manager
 
 <p align="center">

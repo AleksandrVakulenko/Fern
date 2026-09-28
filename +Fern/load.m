@@ -1,4 +1,4 @@
-function load(package_name)
+function load(package_name, options)
     arguments
         package_name string {mustBeMember(package_name, ...
             [ ...
@@ -13,8 +13,9 @@ function load(package_name)
             "Time_domain_FRA", ...
             "Aster_FRA" ...
             ])}
+        options.update logical = false
     end
 
-    f_core.load_package(package_name, true);
+    f_core.load_package(package_name, options.update);
 
 end

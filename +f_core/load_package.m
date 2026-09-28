@@ -9,6 +9,7 @@ function load_package(package_name, update)
     [found_localy, Name, Dependencies, Info] = f_core.find_package_locally(package_name);
     
     if found_localy == false
+        
         downloaded = f_core.get_package_from_github(package_name);
         if ~downloaded
             error(['Error while downloading: ' char(package_name)])
@@ -33,12 +34,13 @@ function load_package(package_name, update)
         activate_package(package_name);
         
         for i = 1:numel(Dependencies)
-            f_core.load_package(Dependencies(i), update);
+            status = is_included(Dependencies(i));
+            if ~status
+                f_core.load_package(Dependencies(i), update);
+            end
         end
     else
-        
-        
-        
+        error(['Error while adding module: ' char(package_name)]);       
     end
 
 end
