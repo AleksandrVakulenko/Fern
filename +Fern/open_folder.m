@@ -26,9 +26,9 @@ function Out_path = open_folder(module_name)
             warning(['Folder "' char(module_name) '" does not exist.'])
         end
     else
-        if nagrout == 0
+        if nargout == 0
             open_folder_in_explorer(Modules_path);
-            Out_path = Modules_path;
+%             Out_path = Modules_path;
         else
             % NOTE: just return path
             Out_path = Modules_path;

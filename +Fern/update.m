@@ -2,7 +2,8 @@
 
 function update(mode)
 arguments
-    mode string {mustBeMember(mode, ["self", "included", "all"])} = "all"
+%     mode string {mustBeMember(mode, ["self", "included", "all"])} = "all"
+    mode string {mustBeMember(mode, ["self", "all"])} = "all"
 end
 
 switch mode
@@ -10,9 +11,9 @@ switch mode
         Path = f_core.get_fern_local_path();
         fgit_tools.update_current_branch('Fern', Path);
 
-    case "included"
-        % FIXME: replace update_all by update(Folder_list) and call it
-        warning('Under construction')
+%     case "included"
+%         % FIXME: replace update_all by update(Folder_list) and call it
+%         warning('Under construction')
 
     case "all"
         update_all();
