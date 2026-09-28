@@ -1,4 +1,5 @@
 
+% FIXME: check save_file_name path correctness 
 
 function bundle_pack(save_file_name)
 arguments
