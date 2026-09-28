@@ -7,10 +7,10 @@ Config_file_name = '.matlabfern';
 Temp_folder_name = 'Matlab_Fern';
 
 User_folder = fullfile(getenv('USERPROFILE'));
-Config_file = fullfile([User_folder '/' Config_file_name]);
+Config_file = fullfile([User_folder filesep Config_file_name]);
 
 System_temp_folder = tempdir;
-Temp_folder = fullfile([System_temp_folder '/' Temp_folder_name '/']);
+Temp_folder = fullfile([System_temp_folder filesep Temp_folder_name filesep]);
 
 end
 

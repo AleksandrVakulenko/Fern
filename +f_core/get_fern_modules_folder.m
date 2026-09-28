@@ -7,6 +7,6 @@ function Modules_path = get_fern_modules_folder()
         mkdir([char(Fern_path) 'Modules']);
     end
 
-    Modules_path = [char(Fern_path) 'Modules/'];
+    Modules_path = [char(Fern_path) 'Modules' filesep];
     Modules_path = fullfile(Modules_path);
 end
