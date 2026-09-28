@@ -1,21 +1,9 @@
 # Fern V1.3.0
 Matlab R2021 package manager
 
-<div align="center">
-  <table>
-    <tr>
-      <td></td> <!-- пустая левая колонка для симметрии -->
-      <td valign="bottom">
-        <img src="../logo/logo.png" width="270" alt="Fern logo" />
-      </td>
-      <td valign="bottom">
-		<em style="font-size: 16px;">
-			Your spells, always within reach.
-		</em>
-      </td>
-      <td></td> <!-- пустая правая колонка -->
-    </tr>
-  </table>
+<div style="display: flex; align-items: flex-end; justify-content: center; gap: 16px;">
+  <img src="logo/logo.png" width="270" alt="Fern logo" />
+  <em style="font-size: 16px;">Your spells, always within reach.</em>
 </div>
 
 ## Installation
