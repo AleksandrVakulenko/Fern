@@ -2,7 +2,7 @@
 Matlab R2021 package manager
 
 <p align="center">
-	<img src="../logo/logo.png" width="270" alt="Fern logo" />
+	<img src="logo/logo.png" width="270" alt="Fern logo" />
 </p>
 
 <p align="center">
