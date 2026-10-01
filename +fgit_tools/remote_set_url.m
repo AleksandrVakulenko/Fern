@@ -6,7 +6,7 @@
 % Set URL of remote
 %
 
-function Remote_url = remote_get_url(Path, URL, Remote_name, echo)
+function remote_set_url(Path, URL, Remote_name, echo)
 arguments
     Path string
     URL string
@@ -18,8 +18,6 @@ cd_cmd = cmd.cd(Path);
 git_cmd = ['git remote set-url ' char(Remote_name) ' ' char(URL)];
 CMD_str = cmd.concat(cd_cmd, git_cmd);
 
-resp = cmd.exec(CMD_str, echo);
-
-Remote_url = strtrim(resp);
+cmd.exec(CMD_str, echo);
 
 end
