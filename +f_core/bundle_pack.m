@@ -30,6 +30,7 @@ end
 
 Bundle_files_arr = [];
 Module_name_arr = [];
+Remote_URL_arr = [];
 Folders_list = f_core.get_list_of_folders(Modules_path);
 
 for i = 1:numel(Folders_list)
@@ -37,8 +38,9 @@ for i = 1:numel(Folders_list)
     Module_path = [char(Modules_path) Module_name];
     is_git = fgit_tools.is_git_repo(Module_path);
     if is_git
-
-%         Path
+        % FIXME: that if more than one URL?
+        Remote_URL = fgit_tools.remote_get_url(Module_path, "origin");
+        Remote_URL_arr = [Remote_URL_arr string(Remote_URL)];
         Bundle_file_name = [Module_name '.bundle'];
         Bundle_path = [Temp_path filesep Module_name '.bundle'];
         Bundle_files_arr = [Bundle_files_arr string(Bundle_file_name)];
@@ -56,6 +58,7 @@ Files_collection = [];
 
 for i = 1:numel(Module_name_arr)
 
+Remote_URL = char(Remote_URL_arr(i));
 Module_name = char(Module_name_arr(i));
 Bundle_file_name = [Module_name '.bundle'];
 Bundle_path = [Temp_path filesep char(Bundle_file_name)];
@@ -64,6 +67,7 @@ disp(['Place to archive: ' Bundle_file_name]); % FIXME: disp
 Bytes = read_file(Bundle_path);
 
 File_data.name = Module_name;
+File_data.remote_url = Remote_URL;
 File_data.data = Bytes;
 
 Files_collection = [Files_collection File_data];
