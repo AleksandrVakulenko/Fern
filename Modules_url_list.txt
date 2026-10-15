@@ -1,11 +1,17 @@
 [
   {
     "Name": "Connector",
-    "URL": "https://github.com/AleksandrVakulenko/Device_connector_class.git"
+    "URL": [
+      "https://github.com/AleksandrVakulenko/Device_connector_class.git",
+      "https://gitverse.ru/AleksandrVakulenko/Device_connector_class.git"
+    ]
   },
   {
     "Name": "aDevice",
-    "URL": "https://github.com/AleksandrVakulenko/Automation_device_class.git"
+    "URL": [
+      "https://github.com/AleksandrVakulenko/Automation_device_class.git",
+      "https://gitverse.ru/AleksandrVakulenko/Automation_device_class.git"
+    ]
   },
   {
     "Name": "Debug_msg",
@@ -16,30 +22,51 @@
   },
   {
     "Name": "Plotlib",
-    "URL": "https://github.com/AleksandrVakulenko/Matlab_plot_library.git"
+    "URL": [
+      "https://github.com/AleksandrVakulenko/Matlab_plot_library.git",
+      "https://gitverse.ru/AleksandrVakulenko/Matlab_plot_library.git"
+    ]
   },
   {
     "Name": "FRA_tools",
-    "URL": "https://github.com/AleksandrVakulenko/FRA_tools.git"
+    "URL": [
+      "https://github.com/AleksandrVakulenko/FRA_tools.git",
+      "https://gitverse.ru/AleksandrVakulenko/FRA_tools.git"
+    ]
   },
   {
     "Name": "Common",
-    "URL": "https://github.com/AleksandrVakulenko/Matlab_common_functions.git"
+    "URL": [
+      "https://github.com/AleksandrVakulenko/Matlab_common_functions.git",
+      "https://gitverse.ru/AleksandrVakulenko/Matlab_common_functions.git"
+    ]
   },
   {
     "Name": "Dahlia",
-    "URL": "https://github.com/AleksandrVakulenko/Dahlia_FE_analizer.git"
+    "URL": [
+      "https://github.com/AleksandrVakulenko/Dahlia_FE_analizer.git",
+      "https://gitverse.ru/AleksandrVakulenko/Dahlia_FE_analizer.git"
+    ]
   },
   {
     "Name": "klog",
-    "URL": "https://github.com/AleksandrVakulenko/klog.git"
+    "URL": [
+      "https://github.com/AleksandrVakulenko/klog.git",
+      "https://gitverse.ru/AleksandrVakulenko/klog.git"
+    ]
   },
   {
     "Name": "Time_domain_FRA",
-    "URL": "https://github.com/AleksandrVakulenko/Time_domain_FRA.git"
+    "URL": [
+      "https://github.com/AleksandrVakulenko/Time_domain_FRA.git",
+      "https://gitverse.ru/AleksandrVakulenko/Time_domain_FRA.git"
+    ]
   },
   {
     "Name": "Aster_FRA",
-    "URL": "https://github.com/AleksandrVakulenko/Aster_FRA.git"
+    "URL": [
+      "https://github.com/AleksandrVakulenko/Aster_FRA.git",
+      "https://gitverse.ru/AleksandrVakulenko/Aster_FRA.git"
+    ]
   }
 ]

@@ -6,11 +6,13 @@ i = 0;
 
 i = i + 1;
 Modules_list(i).Name = "Connector";
-Modules_list(i).URL = "https://github.com/AleksandrVakulenko/Device_connector_class.git";
+Modules_list(i).URL = ["https://github.com/AleksandrVakulenko/Device_connector_class.git"
+                       "https://gitverse.ru/AleksandrVakulenko/Device_connector_class.git"];
 
 i = i + 1;
 Modules_list(i).Name = "aDevice";
-Modules_list(i).URL = "https://github.com/AleksandrVakulenko/Automation_device_class.git";
+Modules_list(i).URL = ["https://github.com/AleksandrVakulenko/Automation_device_class.git"
+                       "https://gitverse.ru/AleksandrVakulenko/Automation_device_class.git"];
 
 i = i + 1;
 Modules_list(i).Name = "Debug_msg";
@@ -19,31 +21,38 @@ Modules_list(i).URL = ["https://github.com/AleksandrVakulenko/Debug_msg_for_matl
 
 i = i + 1;
 Modules_list(i).Name = "Plotlib";
-Modules_list(i).URL = "https://github.com/AleksandrVakulenko/Matlab_plot_library.git";
+Modules_list(i).URL = ["https://github.com/AleksandrVakulenko/Matlab_plot_library.git"
+                       "https://gitverse.ru/AleksandrVakulenko/Matlab_plot_library.git"];
 
 i = i + 1;
 Modules_list(i).Name = "FRA_tools";
-Modules_list(i).URL = "https://github.com/AleksandrVakulenko/FRA_tools.git";
+Modules_list(i).URL = ["https://github.com/AleksandrVakulenko/FRA_tools.git"
+                       "https://gitverse.ru/AleksandrVakulenko/FRA_tools.git"];
 
 i = i + 1;
 Modules_list(i).Name = "Common";
-Modules_list(i).URL = "https://github.com/AleksandrVakulenko/Matlab_common_functions.git";
+Modules_list(i).URL = ["https://github.com/AleksandrVakulenko/Matlab_common_functions.git"
+                       "https://gitverse.ru/AleksandrVakulenko/Matlab_common_functions.git"];
 
 i = i + 1;
 Modules_list(i).Name = "Dahlia";
-Modules_list(i).URL = "https://github.com/AleksandrVakulenko/Dahlia_FE_analizer.git";
+Modules_list(i).URL = ["https://github.com/AleksandrVakulenko/Dahlia_FE_analizer.git"
+                       "https://gitverse.ru/AleksandrVakulenko/Dahlia_FE_analizer.git"];
 
 i = i + 1;
 Modules_list(i).Name = "klog";
-Modules_list(i).URL = "https://github.com/AleksandrVakulenko/klog.git";
+Modules_list(i).URL = ["https://github.com/AleksandrVakulenko/klog.git"
+                       "https://gitverse.ru/AleksandrVakulenko/klog.git"];
 
 i = i + 1;
 Modules_list(i).Name = "Time_domain_FRA";
-Modules_list(i).URL = "https://github.com/AleksandrVakulenko/Time_domain_FRA.git";
+Modules_list(i).URL = ["https://github.com/AleksandrVakulenko/Time_domain_FRA.git"
+                       "https://gitverse.ru/AleksandrVakulenko/Time_domain_FRA.git"];
 
 i = i + 1;
 Modules_list(i).Name = "Aster_FRA";
-Modules_list(i).URL = "https://github.com/AleksandrVakulenko/Aster_FRA.git";
+Modules_list(i).URL = ["https://github.com/AleksandrVakulenko/Aster_FRA.git"
+                       "https://gitverse.ru/AleksandrVakulenko/Aster_FRA.git"];
 
 
 Filename = "Modules_url_list.txt";
