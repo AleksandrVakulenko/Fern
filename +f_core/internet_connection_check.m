@@ -1,11 +1,15 @@
 
 % NOTE: add more variants
 
+% FIXME: add time compare for different hubs
+
 function [connected] = internet_connection_check()
 
-Google_DNS = checkConnection('8.8.8.8',   53);    % Google DNS
-Github_HTTPS = checkConnection('github.com', 443); % github HTTPS
-Github_SSH = checkConnection('github.com', 22);  % git SSH
+Google_DNS = checkConnection('8.8.8.8',   53);
+Github_HTTPS = checkConnection('github.com', 443);
+Github_SSH = checkConnection('github.com', 22);
+Gitverse_HTTPS = checkConnection('gitverse.ru', 443);
+Gitverse_SSH = checkConnection('gitverse.ru', 22);
 
 connected = Google_DNS && Github_HTTPS && Github_SSH;
 
@@ -15,10 +19,11 @@ end
 
 
 
-function isConnected = checkConnection(ipAddress, port, Timeout)
+function [isConnected, Delay] = checkConnection(ipAddress, port, Measure, Timeout)
 arguments
     ipAddress = '8.8.8.8'
     port = 53
+    Measure logical = true
     Timeout = 2.0
 end
 
@@ -26,13 +31,41 @@ end
         Timeout = 1.0;
     end
 
-    try
-        t = tcpclient(ipAddress, port, "ConnectTimeout", Timeout);
-        isConnected = true;
-        clear t;   % close connection
-    catch
-        isConnected = false;
+    if ~Measure
+        N = 1;
+    else
+        N = 10;
     end
+
+
+    Time_arr = NaN(1, N);
+    for i = 1:N
+        Timer = tic;
+        try
+            t = tcpclient(ipAddress, port, "ConnectTimeout", Timeout);
+            isConnected = true;
+            clear t;   % close connection
+        catch
+            isConnected = false;
+        end
+        Time = toc(Timer);
+        Time_arr(i) = Time;
+        if Time > 0.8*Timeout || ~isConnected
+            isConnected = false;
+            Delay = NaN;
+            return;
+        end
+    end
+
+
+    if ~Measure
+        Delay = NaN;
+    else
+        Delay = mean(Time_arr);
+        Delay_std = std(Time_arr);
+        disp([num2str(Delay, '%0.2f') ' ± ' num2str(Delay_std, '%.2f') ' s'])
+    end
+    
 end
 
 
