@@ -47,14 +47,20 @@ for i = 1:numel(Folders_list)
     is_git = fgit_tools.is_git_repo(Path);
     if is_git
         modified_files = fgit_tools.status(Path);
+        disp(['Update: ' char(Folders_list(i))])
         if ~isempty(modified_files)
             % FIXME: delete folder and re-download all
             warning(['Could not update: ' char(Folders_list(i))])
         else
             % FIXME: add options to pull from other location and branch
-            fgit_tools.pull(Path);
+            try
+                fgit_tools.pull(Path);
+            catch err
+                rethrow(err)
+                % FIXME: do something
+            end
             % FIXME: do fetch and print status if updater or not
-            disp(['UPDATED: ' char(Folders_list(i))])
+            disp('Successfully updated.')
         end
     else
         % FIXME: delete unused folder

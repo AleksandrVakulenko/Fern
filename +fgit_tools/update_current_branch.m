@@ -19,6 +19,8 @@ end
 
 [~, Current_branch] = fgit_tools.branch_list(Path);
 
+% FIXME: check if local copy is modified
+
 Remotes_list = fgit_tools.remote_list(Path);
 Errors = [];
 flag = false;
