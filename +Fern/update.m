@@ -71,7 +71,7 @@ for i = 1:numel(Folders_list)
                 % FIXME: do something
             end
             % FIXME: do fetch and print status if updater or not
-            disp('Successfully updated.')
+            disp('    Successfully updated.')
         end
     else
         % FIXME: delete unused folder

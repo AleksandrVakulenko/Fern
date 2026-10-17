@@ -17,7 +17,7 @@ function Out_path = open_folder(module_name)
             Path = fullfile([Modules_path char(module_name)]);
             if nargout == 0
                 open_folder_in_explorer(Path);
-                Out_path = Path;
+%                 Out_path = Path;
             else
                 % NOTE: just return path
                 Out_path = Path;
