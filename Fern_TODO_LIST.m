@@ -1,26 +1,19 @@
 % TODO:
-% 1) 
-% 2) 
-% 3) add second try if downloading problems (+0.0.5)
-% 4) Check if git does not work (+0.0.5)
-% 5) 
-% 6) add .fern_dependencies file (and Fern.auto) (+0.2)
-% 7) 
+% 1) add second try if downloading problems (+0.0.5)
+% 2) Check if git does not work (+0.0.5)
+% 3) add .fern_dependencies file (and Fern.auto) (+0.2)
+% 4) update .fern_module parser to JSON (+0.1.0)
+% 5) Overall refactor (+0.2.0)
+% 6) Create a function index (and find function) (+0.2.0)
+% 7) Exclude unused pathes (in case of Matlab crash it stays forever)
 % 8) 
-% 9) update .fern_module parser to JSON (+0.1.0)
-
-% TODO 2025/12/01:
-% 1) Exclude unused pathes (in case of Matlab crash it stays forever)
-% 2) Create a function index (and find function) (+0.2.0)
-% 3) Create file for dependencies to load
-% 4) Overall refactor (+0.2.0)
-% 5) 
-
-% TODO 2026/05/18:
-% 1) convert jsondecode output to string and array from char and cell
-% 2) use more than one URL in get_package_from_github
-% 3) add ability to use differet branches (save in <Name>_<Branch> folder)
-% 4) 
+% 9) convert jsondecode output to string and array from char and cell
+% 10) 
+% 11) use more than one URL in get_package_from_github
+% 12) add ability to use differet branches (save in <Name>_<Branch> folder)
+% 13) 
+% 14) 
+% 15) 
 
 % Add new packeges
 % 1) https://github.com/AleksandrVakulenko/Novocontrol-file-import.git
