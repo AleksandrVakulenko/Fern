@@ -27,12 +27,14 @@ end
 
 function update_self()
 
-Old_version = f_core.get_fern_version;
+old_version = f_core.get_fern_version;
 
 Path = f_core.get_fern_local_path();
 fgit_tools.update_current_branch('Fern', Path);
 
-New_version = f_core.get_fern_version;
+new_version = f_core.get_fern_version;
+
+f_helper.run_me_after_update(old_version, new_version);
 
 end
 
