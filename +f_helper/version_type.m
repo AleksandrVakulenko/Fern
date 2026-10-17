@@ -3,8 +3,10 @@
 classdef version_type
 
     methods (Access = public)
+
+        % NOTE: f_helper.version_type must be always constuctible by uint32
+        %     MMMmmmuuu (M for major, m for minor, u for micro version)
         function Version = version_type(arg)
-            
             if class(arg) == "string" || class(arg) == "char"
                 V_line = string(arg);
                 [Data, N] = sscanf(V_line, '# Fern V%i.%i.%i');
@@ -16,6 +18,10 @@ classdef version_type
                 end
             elseif class(arg) == "double" && numel(arg) == 3
                 Data = arg;
+            elseif class(arg) == "uint32"
+                Data(1) = arg/1000000;
+                Data(2) = mod(arg/1000, 1000);
+                Data(3) = mod(arg, 1000);
             else
                 error('Wrong version_type constructor argument')
             end
@@ -28,6 +34,9 @@ classdef version_type
 
         end
 
+        function int_v = get_int_version(obj)
+            int_v = obj.int;
+        end
 
         function tf = lt(v1, v2)
             arguments

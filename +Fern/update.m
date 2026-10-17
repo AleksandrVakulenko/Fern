@@ -12,7 +12,7 @@ end
 
 switch mode
     case "self"
-        update_self()
+        update_self_wrapper()
 
     case "all"
         update_all();
@@ -24,18 +24,27 @@ end
 end
 
 
+% NOTE: this function should not be changed
+function update_self_wrapper()
+[old_v_int, new_v_int] = update_self();
+rehash;
+f_helper.run_me_after_update(old_v_int, new_v_int);
+end
 
-function update_self()
+
+% NOTE: first 2 output arguments of this function mast not be changed
+function [old_v_int, new_v_int] = update_self()
 
 old_version = f_core.get_fern_version;
 
 Path = f_core.get_fern_local_path();
 fgit_tools.update_current_branch('Fern', Path);
 
+rehash; % NOTE: rehash for the case then f_core.get_fern_version is changed
 new_version = f_core.get_fern_version;
 
-rehash;
-f_helper.run_me_after_update(old_version, new_version);
+old_v_int = old_version.get_int_version();
+new_v_int = new_version.get_int_version();
 
 end
 

@@ -1,10 +1,16 @@
 
+% FIXME: add options for the case of corrupted version values
 
-function run_me_after_update(old_version, new_version)
+function run_me_after_update(old_v_int, new_v_int)
 arguments
-    old_version f_helper.version_type
-    new_version f_helper.version_type
+    old_v_int uint32
+    new_v_int uint32
 end
+
+% NOTE: f_helper.version_type must be always constuctible by uint32
+%     MMMmmmuuu (M for major, m for minor, u for micro version)
+old_version = f_helper.version_type(old_v_int);
+new_version = f_helper.version_type(new_v_int);
 
 if new_version > old_version
     disp('-----------------------');
