@@ -12,6 +12,10 @@ if new_version > old_version
     disp(['New version: ' char(new_version.str)]);
     disp('-----------------------');
 
+    if old_version < f_helper.version_type([1 5 1])
+        Fern.update('all');
+    end
+
 end
 
 end
