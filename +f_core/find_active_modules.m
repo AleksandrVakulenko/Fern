@@ -1,9 +1,28 @@
 
+% FIXME: use somthing new in this function
+
+% 1)
+% p = 'C:\Users\ivan\Documents\data\file.txt';
+% [parent, name, ext] = fileparts(p)
+
+% 2)
+% p = 'C:\Users\ivan\Documents\data\file.txt';
+% parts = {};
+% while ~isempty(p)
+%     [p, name, ext] = fileparts(p);
+%     parts = [{ [name ext] }, parts];   % вставляем в начало
+% end
+% parts
+
+% 3)
+% p = 'C:\Users\ivan\Documents\data\file.txt';
+% tokens = strsplit(p, filesep)
+
 
 function Module_names = find_active_modules()
 
 MF = f_core.get_fern_modules_folder();
-Lines = f_core.get_full_path_elements();
+Lines = f_helper.get_all_matlab_PATH_elements();
 
 ind_cell = strfind(Lines, MF);
 
@@ -33,7 +52,7 @@ end
 
 function Folder_name = get_last_folder_in_path(Path)
     
-    Path = f_core.erase_last_slash(Path);
+    Path = f_helper.erase_last_slash(Path);
 
     % for any type "\" "/"
     ind = strfind(Path, '\');

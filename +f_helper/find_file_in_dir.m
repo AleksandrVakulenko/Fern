@@ -4,7 +4,6 @@ arguments
     name string
     type {mustBeMember(type, ["file", "folder"])} = "file"
 end
-
     content = dir(folder);
     content = struct2cell(content);
     all_names = content(1, :);
@@ -20,10 +19,9 @@ end
     end
 
     if status
-        folder = f_core.erase_last_slash(folder);
+        folder = f_helper.erase_last_slash(folder);
         path_to_name = [char(folder) filesep char(name)];
     else
         path_to_name = string.empty;
     end
-%     path_to_name = fullfile(path_to_name); NOTE: useless on linux
 end

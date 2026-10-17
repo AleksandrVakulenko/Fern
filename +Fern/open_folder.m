@@ -11,7 +11,7 @@ function Out_path = open_folder(module_name)
     Modules_path = f_core.get_fern_modules_folder();
 
     if module_name ~= ""
-        exist = f_core.find_file_in_dir(Modules_path, module_name, "folder");
+        exist = f_helper.find_file_in_dir(Modules_path, module_name, "folder");
     
         if exist
             Path = fullfile([Modules_path char(module_name)]);

@@ -24,7 +24,7 @@ function [Status, Name, Dependencies, Info] = find_package_locally(package_name)
     Fern_modeule_info_filename = '.fern_module';
 
     [contain_module_file, Path_to_fern_info] = ...
-        f_core.find_file_in_dir(Path, Fern_modeule_info_filename);
+        f_helper.find_file_in_dir(Path, Fern_modeule_info_filename);
 
     if contain_module_file
         [Name, Dependencies, Info] = f_core.parse_fern_info(Path_to_fern_info);

@@ -8,7 +8,7 @@ Fern_path = f_core.get_fern_local_path();
 Temp_path = [char(Fern_path) filesep 'temp'];
 Temp_path = fullfile(Temp_path); % FIXME: check on linux;
 
-exist = f_core.find_file_in_dir(Fern_path, "temp", "folder");
+exist = f_helper.find_file_in_dir(Fern_path, "temp", "folder");
 Temp_path = [char(Fern_path) filesep 'temp'];
 Temp_path = fullfile(Temp_path); % FIXME: check on linux;
 
@@ -53,7 +53,7 @@ for i = 1:numel(Module_name_arr)
     Bundle_file_path = Bundle_file_path_arr(i);
     Remote_URL = char(Remote_URL_arr(i));
 
-    exist = f_core.find_file_in_dir(Modules_path, Module_name, "folder");
+    exist = f_helper.find_file_in_dir(Modules_path, Module_name, "folder");
 
     if exist
         rmdir(Module_folder, 's');

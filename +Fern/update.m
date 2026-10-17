@@ -50,7 +50,7 @@ end
 
 Modules_path = f_core.get_fern_modules_folder();
 
-Folders_list = f_core.get_list_of_folders(Modules_path);
+Folders_list = f_helper.get_list_of_folders(Modules_path);
 
 for i = 1:numel(Folders_list)
     Path = [char(Modules_path) filesep char(Folders_list(i))];

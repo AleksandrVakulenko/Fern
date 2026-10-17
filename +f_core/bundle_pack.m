@@ -14,7 +14,7 @@ end
 
 Modules_path = f_core.get_fern_modules_folder();
 
-exist = f_core.find_file_in_dir(Fern_path, "temp", "folder");
+exist = f_helper.find_file_in_dir(Fern_path, "temp", "folder");
 
 Temp_path = [char(Fern_path) filesep 'temp'];
 Temp_path = fullfile(Temp_path); % FIXME: check on linux;
@@ -31,7 +31,7 @@ end
 Bundle_files_arr = [];
 Module_name_arr = [];
 Remote_URL_arr = [];
-Folders_list = f_core.get_list_of_folders(Modules_path);
+Folders_list = f_helper.get_list_of_folders(Modules_path);
 
 for i = 1:numel(Folders_list)
     Module_name = char(Folders_list(i));

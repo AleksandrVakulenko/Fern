@@ -1,4 +1,4 @@
-function Lines = get_full_path_elements()
+function Lines = get_all_matlab_PATH_elements()
 
 if isunix
     Delimiter = ':';
