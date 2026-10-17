@@ -5,11 +5,12 @@
 
 function [connected] = internet_connection_check()
 
-Google_DNS = checkConnection('8.8.8.8',   53);
-Github_HTTPS = checkConnection('github.com', 443);
-Github_SSH = checkConnection('github.com', 22);
-Gitverse_HTTPS = checkConnection('gitverse.ru', 443);
-Gitverse_SSH = checkConnection('gitverse.ru', 22);
+
+[Google_DNS, Delay_1] = checkConnection('8.8.8.8',   53);
+[Github_HTTPS, Delay_2] = checkConnection('github.com', 443);
+[Github_SSH, Delay_3] = checkConnection('github.com', 22);
+% [Gitverse_HTTPS, Delay_4] = checkConnection('gitverse.ru', 443);
+% [Gitverse_SSH, Delay_5] = checkConnection('gitverse.ru', 22);
 
 connected = Google_DNS && Github_HTTPS && Github_SSH;
 
@@ -23,7 +24,7 @@ function [isConnected, Delay] = checkConnection(ipAddress, port, Measure, Timeou
 arguments
     ipAddress = '8.8.8.8'
     port = 53
-    Measure logical = true
+    Measure logical = false
     Timeout = 2.0
 end
 

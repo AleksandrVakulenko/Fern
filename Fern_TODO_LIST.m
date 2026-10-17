@@ -1,6 +1,6 @@
 % TODO:
 % 1) 
-% 2) add internet connection check OR catch errors (+0.1)
+% 2) 
 % 3) add second try if downloading problems (+0.0.5)
 % 4) Check if git does not work (+0.0.5)
 % 5) 
@@ -36,3 +36,5 @@
 % 7) update URL list parser
 % 8) new git functions
 % 9) multiple include problem load_recursive(that_is_loaded, ...)
+% 10) add internet connection check OR catch errors
+% 11) 

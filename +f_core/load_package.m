@@ -10,11 +10,16 @@ function load_package(package_name, update)
     
     if found_localy == false
         
+        con2internet = f_core.internet_connection_check();
+        if ~con2internet
+            error('Could not get package: no internet connection.');
+        end
+
         downloaded = f_core.get_package_from_github(package_name);
         if ~downloaded
             error(['Error while downloading: ' char(package_name)])
         end
-        % FIXME: do we need to get status twice?
+        
         [status, Name, Dependencies, Info] = f_core.find_package_locally(package_name);
         if ~status
             error(['Could not find (after downloading) Fern module: '...
