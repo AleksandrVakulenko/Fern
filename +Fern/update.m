@@ -27,12 +27,12 @@ end
 
 function update_self()
 
-Old_version = f_core.get_fern_version
+Old_version = f_core.get_fern_version;
 
 Path = f_core.get_fern_local_path();
 fgit_tools.update_current_branch('Fern', Path);
 
-New_version = f_core.get_fern_version
+New_version = f_core.get_fern_version;
 
 end
 
@@ -61,8 +61,8 @@ for i = 1:numel(Folders_list)
             % FIXME: delete folder and re-download all
             warning(['Could not update: ' char(Folders_list(i))])
         else
-            % FIXME: add options to pull from other location and branch
             try
+                % FIXME: add options to pull from other location and branch
                 fgit_tools.pull(Path);
             catch err
                 rethrow(err)

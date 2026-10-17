@@ -7,7 +7,12 @@
 % Finishes after first success.
 % NOTE: The <Name> argument is used only to improve readability of messages.
 
-function update_current_branch(Name, Path)
+function update_current_branch(Name, Path, Only_master_branch)
+arguments
+    Name
+    Path
+    Only_master_branch = false;
+end
 
 status = fgit_tools.is_git_repo(Path);
 if ~status
@@ -17,7 +22,19 @@ if ~status
     error(msg)
 end
 
-[~, Current_branch] = fgit_tools.branch_list(Path);
+[Branches, Current_branch] = fgit_tools.branch_list(Path);
+
+if Only_master_branch
+    Branch_to_update_from = Current_branch;
+else
+    if any(Branches == "master")
+        Branch_to_update_from = 'master';
+    elseif any(Branches == "main")
+        Branch_to_update_from = 'main';
+    else
+        error('unknown master branch name')
+    end
+end
 
 % FIXME: check if local copy is modified
 
@@ -29,7 +46,7 @@ for i = 1:numel(Remotes_list)
     URL = fgit_tools.remote_get_url(Path, Remote);
     try
         disp(['Update <' char(Name) '> from ' char(Remote)]) % FIXME: disp
-        fgit_tools.pull(Path, Current_branch, Remote);
+        fgit_tools.pull(Path, Branch_to_update_from, Remote);
         flag = true;
         break;
     catch err
