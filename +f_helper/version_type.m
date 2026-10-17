@@ -4,7 +4,7 @@ classdef version_type
 
     methods (Access = public)
 
-        % NOTE: f_helper.version_type must be always constuctible by uint32
+        % NOTE: f_helper.version_type must be always constructible by uint32
         %     MMMmmmuuu (M for major, m for minor, u for micro version)
         function Version = version_type(arg)
             if class(arg) == "string" || class(arg) == "char"
