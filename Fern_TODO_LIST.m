@@ -2,7 +2,7 @@
 % 1) add second try if downloading problems (+0.0.5)
 % 2) Check if git does not work (+0.0.5)
 % 3) add .fern_dependencies file (and Fern.auto) (+0.2)
-% 4) update .fern_module parser to JSON (+0.1.0)
+% 4) 
 % 5) Overall refactor (+0.2.0)
 % 6) Create a function index (and find function) (+0.2.0)
 % 7) Exclude unused pathes (in case of Matlab crash it stays forever)
@@ -31,4 +31,5 @@
 % 9) multiple include problem load_recursive(that_is_loaded, ...)
 % 10) add internet connection check OR catch errors
 % 11) finish Fern.update
-% 12) 
+% 12) update .fern_module parser to JSON
+% 13) 
