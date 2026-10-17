@@ -12,8 +12,7 @@ end
 
 switch mode
     case "self"
-        Path = f_core.get_fern_local_path();
-        fgit_tools.update_current_branch('Fern', Path);
+        update_self()
 
     case "all"
         update_all();
@@ -26,6 +25,16 @@ end
 
 
 
+function update_self()
+
+Old_version = f_core.get_fern_version
+
+Path = f_core.get_fern_local_path();
+fgit_tools.update_current_branch('Fern', Path);
+
+New_version = f_core.get_fern_version
+
+end
 
 
 % NOTE: update all dounloaded modules

@@ -1,27 +1,22 @@
 
 
-% FIXME: unused
+function Version = get_fern_version()
 
-function [Version_txt, Version_struct] = get_fern_version()
+Fern_path = f_core.get_fern_local_path();
+Filename = [char(Fern_path) filesep 'README.md'];
 
-Data = fileread('README.md');
+Lines = readlines(Filename);
 
-Data = split(Data, newline);
+V_line = Lines(1); % FIXME: maybe not
 
-Data = strtrim(Data{1});
+Data = sscanf(V_line, '# Fern V%i.%i.%i');
 
-ind = strfind(Data, 'V');
-
-Data = Data(ind+1:end);
-
-Version_txt = Data;
-
-Tokens = split(Version_txt, '.');
-Major = str2double(Tokens{1});
-Minor = str2double(Tokens{2});
-Micro = str2double(Tokens{3});
-
-
-Version_struct = struct("major", Major, "minor", Minor, 'micro', Micro);
+Version.major = Data(1);
+Version.minor = Data(2);
+Version.micro = Data(3);
+Version.str = [num2str(Data(1)) '.' num2str(Data(2)) '.' num2str(Data(3))];
+Version.int = Data(1)*1000000 + Data(2)*1000 + Data(3);
 
 end
+
+
