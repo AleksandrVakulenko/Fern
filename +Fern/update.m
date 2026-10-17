@@ -34,6 +34,7 @@ fgit_tools.update_current_branch('Fern', Path);
 
 new_version = f_core.get_fern_version;
 
+rehash;
 f_helper.run_me_after_update(old_version, new_version);
 
 end
