@@ -1,12 +1,12 @@
 
 function remove(module_name)
     arguments
-        module_name string {isStringScalar(module_name)} = "all";
+        module_name string {isStringScalar(module_name)} = string.empty;
     end
     
     active_modules = f_core.find_active_modules();
     
-    if module_name == "all"
+    if isempty(module_name)
         for i = 1:numel(active_modules)
             exclude_single_module(active_modules(i))
         end

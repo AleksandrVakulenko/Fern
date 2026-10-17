@@ -1,4 +1,4 @@
-# Fern V1.5.2
+# Fern V1.5.3
 Matlab R2021 package manager
 
 <p align="center">
@@ -27,12 +27,11 @@ Matlab R2021 package manager
 
     - This function will add the package to the current path.
     - If the package is missing, it will be downloaded from the remote repository.
-    - The package will also be updated from the master branch each time you include it.
 
 * `Fern.remove("package name")`
 
     - Removes selected package from path.
-    - "all" removes all included packeges from path.
+    - `Fern.remove()` removes all included packeges from path.
 
 * `Fern.open_folder("package name")`
 
@@ -54,7 +53,7 @@ Matlab R2021 package manager
 
 * `Fern.archive("create", Path_to_save_file_name)`
 
-    - Creates an archive file with all available modules.
+    - Creates an archive file with all available modules. For cases where you need to transfer all modules to another computer that lacks internet access.
 
 * `Fern.archive("restore", Path_to_save_file_name)`
 
