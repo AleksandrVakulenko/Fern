@@ -5,7 +5,7 @@
 % 4) Check if git does not work (+0.0.5)
 % 5) 
 % 6) add .fern_dependencies file (and Fern.auto) (+0.2)
-% 7) finish Fern.update (+0.0.5)
+% 7) 
 % 8) 
 % 9) update .fern_module parser to JSON (+0.1.0)
 
@@ -37,4 +37,5 @@
 % 8) new git functions
 % 9) multiple include problem load_recursive(that_is_loaded, ...)
 % 10) add internet connection check OR catch errors
-% 11) 
+% 11) finish Fern.update
+% 12) 
