@@ -1,3 +1,6 @@
+
+%  FIXME: unused function
+
 function [Name, Dependencies, Info] = parse_fern_info_old(Path_to_fern_info)
     % TODO: update parser to use JSON format
 

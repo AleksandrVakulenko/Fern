@@ -1,23 +1,28 @@
+
 % TODO:
 % 1) add second try if downloading problems (+0.0.5)
 % 2) Check if git does not work (+0.0.5)
 % 3) add .fern_dependencies file (and Fern.auto) (+0.2)
 % 4) 
 % 5) Overall refactor (+0.2.0)
-% 6) Create a function index (and find function) (+0.2.0)
+% 6) 
 % 7) Exclude unused pathes (in case of Matlab crash it stays forever)
 % 8) 
-% 9) convert jsondecode output to string and array from char and cell
-% 10) 
-% 11) use more than one URL in get_package_from_github
-% 12) add ability to use differet branches (save in <Name>_<Branch> folder)
-% 13) 
-% 14) 
-% 15) 
+% 9) 
+
+
+% Fern 2.0.0 TODO list:
+% 1) Create a function index (and find function) (+0.2.0)
+% 2) use more than one URL in get_package_from_github
+% 3) add ability to use differet branches (save in <Name>_<Branch> folder)
+% 4) add templates
+% 5) 
+
 
 % Add new packeges
 % 1) https://github.com/AleksandrVakulenko/Novocontrol-file-import.git
 % 2) from _INBOX folder
+
 
 % DONE:
 % 1) check what is included now
