@@ -68,5 +68,9 @@
       "https://github.com/AleksandrVakulenko/Aster_FRA.git",
       "https://gitverse.ru/AleksandrVakulenko/Aster_FRA.git"
     ]
+  },
+  {
+    "Name": "ShadedErrorBar",
+    "URL": "https://github.com/AleksandrVakulenko/shadedErrorBar.git"
   }
 ]

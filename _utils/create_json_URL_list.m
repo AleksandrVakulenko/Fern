@@ -54,6 +54,10 @@ Modules_list(i).Name = "Aster_FRA";
 Modules_list(i).URL = ["https://github.com/AleksandrVakulenko/Aster_FRA.git"
                        "https://gitverse.ru/AleksandrVakulenko/Aster_FRA.git"];
 
+i = i + 1;
+Modules_list(i).Name = "ShadedErrorBar";
+Modules_list(i).URL = ["https://github.com/AleksandrVakulenko/shadedErrorBar.git"];
+
 
 Filename = "Modules_url_list.txt";
 

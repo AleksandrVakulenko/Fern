@@ -46,10 +46,10 @@ clc
 % Info = "Сustomizable debug messages (replacement for Debug_msg)";
 % Tegs = "debug; pring; console";
 
-% Name = "Plotlib";
-% Dependencies = [];
-% Info = "Collection of functions for matlab plot";
-% Tegs = "plot; figure; logscale, tickmarks";
+Name = "Plotlib";
+Dependencies = ["ShadedErrorBar"];
+Info = "Collection of functions for matlab plot";
+Tegs = "plot; figure; logscale, tickmarks";
 
 % Name = "Time_domain_FRA";
 % Dependencies = ["FRA_tools", "Common", "klog"];
